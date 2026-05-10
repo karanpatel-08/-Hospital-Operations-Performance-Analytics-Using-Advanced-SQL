@@ -1,181 +1,322 @@
 # 🏥 Hospital Operations Performance Analytics Using Advanced SQL
 
-## 📌 Project Overview
-This project demonstrates how advanced SQL techniques can transform raw hospital operational data into meaningful business insights for executive-level decision-making.
+<div align="center">
 
-The analysis focuses on improving:
-- Patient flow efficiency
-- Department performance monitoring
+![SQL](https://img.shields.io/badge/SQL-Advanced-blue?style=for-the-badge&logo=postgresql)
+![Healthcare Analytics](https://img.shields.io/badge/Domain-Healthcare-success?style=for-the-badge)
+![Business Intelligence](https://img.shields.io/badge/Analytics-Business%20Intelligence-orange?style=for-the-badge)
+![Data Analysis](https://img.shields.io/badge/Project-Portfolio-red?style=for-the-badge)
+
+</div>
+
+---
+
+# 📌 Project Overview
+
+This project analyzes hospital operations data using advanced SQL techniques to generate executive-level operational insights for healthcare management.
+
+The analysis focuses on:
+- Doctor workload optimization
+- Department performance tracking
+- Revenue analysis
+- Patient flow trends
+- Operational efficiency monitoring
 - Resource utilization
-- Revenue visibility
-- Operational bottlenecks
-- Hospital management reporting
 
-Using complex SQL queries, this project converts transactional healthcare data into actionable analytics that support data-driven operational planning.
+The project demonstrates how advanced SQL can transform raw healthcare datasets into actionable business intelligence.
 
 ---
 
-## 🛠️ Tools & Technologies
-- SQL
-- MySQL / PostgreSQL / SQL Server
-- Joins
-- CTEs
-- Window Functions
-- Aggregate Functions
-- Subqueries
-- CASE Statements
-- Business Intelligence Concepts
+# 🎯 Stakeholder Focus
+
+### Primary Stakeholders
+- Hospital Operations Team
+- Executive Management
+
+### Business Questions Solved
+- Which doctors are overloaded?
+- Which departments perform best?
+- How is revenue distributed?
+- Is operational activity increasing?
+- Are patient visits concentrated?
+- Which departments are improving or declining?
 
 ---
 
-## 📂 Dataset Information
-The dataset contains simulated hospital operational records including:
-- Patient information
-- Appointments
+# 🛠️ Tools & Technologies
+
+| Category | Tools |
+|---|---|
+| Database | SQL |
+| Concepts | CTEs, Window Functions |
+| Functions | RANK, NTILE, LAG, FIRST_VALUE |
+| Analysis | Healthcare Analytics |
+| Visualization Ready | Power BI Compatible |
+
+---
+
+# 📂 Dataset Overview
+
+The dataset contains:
+- Patients
 - Doctors
-- Departments
-- Admissions
-- Billing
+- Appointments
 - Treatments
-- Hospital operations metrics
 
----
-
-## 🎯 Business Objectives
-The project aims to answer key hospital management questions such as:
-
-- Which departments handle the highest patient load?
-- Which doctors manage the most appointments?
-- What are the revenue trends across departments?
-- How efficient are hospital operations?
-- Which services contribute most to revenue?
-- What operational bottlenecks exist?
-
----
-
-# 📊 SQL Analysis Performed
-
-## 1️⃣ Department-wise Patient Distribution
-Analyzed patient volume handled by each hospital department.
-
-### Key Insights
-- Identified busiest departments
-- Measured operational workload
-- Evaluated patient distribution efficiency
-
-<img width="100%" alt="Department Analysis" src="PASTE_SCREENSHOT_LINK_HERE">
-
----
-
-## 2️⃣ Doctor Performance Analysis
-Evaluated doctor workload and appointment handling capacity.
-
-### Key Insights
-- Top-performing doctors
-- Appointment handling trends
-- Department productivity
-
-<img width="100%" alt="Doctor Performance" src="PASTE_SCREENSHOT_LINK_HERE">
-
----
-
-## 3️⃣ Revenue Analytics
-Analyzed billing and revenue generation patterns.
-
-### Key Insights
-- Highest revenue-generating departments
-- Revenue contribution analysis
-- Billing trends
-
-<img width="100%" alt="Revenue Analytics" src="PASTE_SCREENSHOT_LINK_HERE">
-
----
-
-## 4️⃣ Patient Admission Trends
-Studied admission frequency and hospital utilization patterns.
-
-### Key Insights
-- Peak admission periods
-- Hospital occupancy trends
-- Patient inflow analysis
-
-<img width="100%" alt="Admission Trends" src="PASTE_SCREENSHOT_LINK_HERE">
-
----
-
-## 5️⃣ Operational Efficiency Metrics
-Measured hospital operational performance using SQL analytics.
-
-### Key Insights
-- Operational bottlenecks
-- Department efficiency
-- Resource utilization
-
-<img width="100%" alt="Operational Efficiency" src="PASTE_SCREENSHOT_LINK_HERE">
+The project includes large-scale hospital operational records enabling advanced healthcare analytics.
 
 ---
 
 # 🧠 Advanced SQL Concepts Used
 
 ## ✅ Common Table Expressions (CTEs)
-Used for modular and readable query design.
+Used for layered analytical transformations.
 
 ## ✅ Window Functions
 Implemented:
-- RANK()
-- DENSE_RANK()
-- ROW_NUMBER()
-- OVER(PARTITION BY)
+- `DENSE_RANK()`
+- `NTILE()`
+- `LAG()`
+- `FIRST_VALUE()`
+- `LAST_VALUE()`
+- Running Totals
 
-## ✅ Aggregate Functions
-Used:
-- SUM()
-- AVG()
-- COUNT()
-- MAX()
-- MIN()
+## ✅ Business Analytics SQL
+- Trend Analysis
+- Segmentation
+- Operational KPIs
+- Performance Comparison
+- Revenue Contribution Analysis
 
-## ✅ Complex Joins
-Implemented:
-- INNER JOIN
-- LEFT JOIN
-- Multi-table joins
+---
 
-## ✅ CASE Statements
-Created conditional business logic for analysis.
+# 📊 SQL Business Analysis
+
+# 1️⃣ Doctor Workload Ranking
+
+### Business Problem
+How do doctors rank within their departments based on patient visits?
+
+### Business Impact
+- Identifies overloaded doctors
+- Detects staffing imbalance
+- Helps optimize scheduling
+
+![](https://miro.medium.com/v2/resize:fit:1400/1*8q1Q6v2b0i4hK0h0lM0xCg.png)
+
+---
+
+# 2️⃣ Revenue Contribution Leaders
+
+### Business Problem
+Which doctors contribute most to hospital revenue?
+
+### Business Impact
+- Supports incentive planning
+- Tracks financial contribution
+- Helps performance evaluation
+
+![](https://miro.medium.com/v2/resize:fit:1400/1*wK4Wf5tB4Lx4j8sK7n7s5Q.png)
+
+---
+
+# 3️⃣ Patient Visit Trend Change
+
+### Business Problem
+How are patient visits changing over time?
+
+### Business Impact
+- Monitors operational growth
+- Tracks patient demand
+- Detects inflow trends
+
+![](https://miro.medium.com/v2/resize:fit:1400/1*L9VY5f9eU8x5PjN5K8JvLQ.png)
+
+---
+
+# 4️⃣ Cumulative Hospital Load
+
+### Business Problem
+How does hospital workload accumulate over time?
+
+### Business Impact
+- Supports capacity planning
+- Helps operational forecasting
+- Assists staffing decisions
+
+![](https://miro.medium.com/v2/resize:fit:1400/1*8nP8z0d0zPjv5r0gW8A0RA.png)
+
+---
+
+# 5️⃣ High vs Low Utilization Doctors
+
+### Business Problem
+How can doctors be grouped by workload intensity?
+
+### Business Impact
+- Improves workload balancing
+- Helps resource allocation
+- Supports operational planning
+
+![](https://miro.medium.com/v2/resize:fit:1400/1*h9Wf2u9sM9L2vJ0gY9w8yA.png)
+
+---
+
+# 6️⃣ Repeat Visit Gap Analysis
+
+### Business Problem
+How frequently do patients revisit the hospital?
+
+### Business Impact
+- Measures patient engagement
+- Tracks follow-up behavior
+- Supports continuity-of-care analysis
+
+![](https://miro.medium.com/v2/resize:fit:1400/1*7gY3wL8z2u8v9X0kK2tQfA.png)
+
+---
+
+# 7️⃣ Department Performance Comparison
+
+### Business Problem
+How do departments compare with hospital averages?
+
+### Business Impact
+- Identifies top-performing departments
+- Detects inefficiencies
+- Helps strategic planning
+
+![](https://miro.medium.com/v2/resize:fit:1400/1*3K7h9uA4vB7mM8kP1sW7NQ.png)
+
+---
+
+# 8️⃣ Doctor Consistency Analysis
+
+### Business Problem
+Which doctors consistently perform above average?
+
+### Business Impact
+- Identifies reliable performers
+- Tracks operational consistency
+- Supports leadership evaluation
+
+![](https://miro.medium.com/v2/resize:fit:1400/1*6yD8kP2nQ9wV4fR7xT0cXg.png)
+
+---
+
+# 9️⃣ Treatment Cost Concentration
+
+### Business Problem
+Which treatments contribute most to overall costs?
+
+### Business Impact
+- Helps cost optimization
+- Supports budgeting
+- Improves financial planning
+
+![](https://miro.medium.com/v2/resize:fit:1400/1*X8z0kL7fP5tN4rM2vW1yQA.png)
+
+---
+
+# 🔟 Operational Growth Momentum
+
+### Business Problem
+Is hospital operational activity accelerating?
+
+### Business Impact
+- Supports expansion planning
+- Tracks operational momentum
+- Assists infrastructure planning
+
+![](https://miro.medium.com/v2/resize:fit:1400/1*4V7f9mN0kP8xQ2zL1sT5Rg.png)
+
+---
+
+# 💡 Sample SQL Query
+
+```sql
+WITH doctor_visits AS (
+    SELECT 
+        d.department,
+        d.doctor_id,
+        d.doctor_name,
+        COUNT(a.visit_id) AS total_visits
+    FROM doctors d
+    JOIN appointments a
+        ON d.doctor_id = a.doctor_id
+    GROUP BY 
+        d.department,
+        d.doctor_id,
+        d.doctor_name
+)
+
+SELECT 
+    department,
+    doctor_name,
+    total_visits,
+    DENSE_RANK() OVER (
+        PARTITION BY department
+        ORDER BY total_visits DESC
+    ) AS department_rank
+FROM doctor_visits;
+```
 
 ---
 
 # 📈 Business Impact
-This project demonstrates how SQL analytics can help healthcare organizations:
 
-- Improve operational efficiency
-- Optimize hospital resource allocation
-- Monitor department performance
-- Support executive decision-making
-- Enhance patient service planning
+This project demonstrates how SQL-driven analytics can help hospitals:
+
+✅ Optimize doctor workload  
+✅ Improve operational efficiency  
+✅ Monitor department performance  
+✅ Support executive decision-making  
+✅ Improve resource planning  
+✅ Track hospital growth trends  
 
 ---
 
-# 🚀 Project Highlights
-✔ Real-world healthcare analytics use case  
-✔ Advanced SQL query implementation  
-✔ Business-focused insights  
-✔ Operational analytics dashboard logic  
-✔ Executive-level reporting approach  
+# 🚀 Key Highlights
+
+✔ Real-world healthcare analytics project  
+✔ Advanced SQL implementation  
+✔ Executive-level business insights  
+✔ Operational KPI analysis  
+✔ Large-scale dataset analysis  
+✔ Power BI-ready analytical approach  
+
+---
+
+# 📁 Recommended Project Structure
+
+```bash
+Hospital-Operations-Analytics/
+│
+├── datasets/
+├── sql_queries/
+├── screenshots/
+├── README.md
+└── project_summary.pdf
+```
 
 ---
 
 # 🔗 Medium Blog
-Read the complete project explanation here:
 
-🔗 <PRIVATE_URL>
+Read the detailed article here:
+
+👉 https://medium.com/@patelkp021/hospital-operations-performance-analytics-using-advanced-sql-a9474f55a438
 
 ---
 
 # 👨‍💻 Author
+
 ## Karan Patel
 
-Aspiring Data Analyst | SQL | Power BI | Healthcare Analytics | Business Intelligence
+Aspiring Data Analyst | SQL | Power BI | Business Intelligence | Healthcare Analytics
 
----
+<div align="center">
+
+### ⭐ If you found this project useful, consider giving it a star!
+
+</div>
