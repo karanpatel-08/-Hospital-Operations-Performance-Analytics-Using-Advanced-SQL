@@ -5,7 +5,7 @@
 ![SQL](https://img.shields.io/badge/SQL-Advanced-blue?style=for-the-badge&logo=postgresql)
 ![Healthcare Analytics](https://img.shields.io/badge/Domain-Healthcare-success?style=for-the-badge)
 ![Business Intelligence](https://img.shields.io/badge/Analytics-Business%20Intelligence-orange?style=for-the-badge)
-![Data Analysis](https://img.shields.io/badge/Project-Case%20Study-red?style=for-the-badge)
+![Case Study](https://img.shields.io/badge/Project-SQL%20Case%20Study-red?style=for-the-badge)
 
 </div>
 
@@ -13,31 +13,33 @@
 
 # 📌 Project Overview
 
-Healthcare organizations generate huge volumes of operational data daily, but raw transactional data alone cannot support executive-level decision-making.
+Healthcare organizations generate massive amounts of operational data daily, but raw transactional data alone cannot support strategic decision-making.
 
-This project demonstrates how advanced SQL can transform raw hospital data into actionable operational intelligence by analyzing:
-- doctor performance
-- patient flow
-- department efficiency
-- revenue contribution
-- operational growth trends
-- resource utilization
+This project demonstrates how advanced SQL can transform hospital operational data into actionable business intelligence by analyzing:
 
-The project focuses on solving real-world hospital management problems using advanced SQL analytics techniques.
+- Doctor workload distribution
+- Department performance
+- Revenue contribution
+- Patient visit trends
+- Operational growth
+- Resource utilization
+
+The project focuses on solving real-world healthcare analytics problems using advanced SQL techniques and business-focused reporting.
 
 ---
 
 # 🎯 Business Problem
 
-Hospital management teams often struggle with:
+Hospital management teams often face challenges such as:
+
 - Uneven doctor workload
 - Department bottlenecks
 - Lack of operational visibility
-- Resource allocation challenges
-- Revenue tracking inefficiencies
-- Monitoring operational growth
+- Resource allocation inefficiencies
+- Revenue tracking limitations
+- Difficulty monitoring operational growth
 
-This project addresses these challenges through SQL-driven analytics and KPI reporting.
+This project addresses these problems through SQL-driven KPI analysis and operational intelligence reporting.
 
 ---
 
@@ -50,32 +52,36 @@ This project addresses these challenges through SQL-driven analytics and KPI rep
 | Functions | RANK, DENSE_RANK, NTILE, LAG |
 | Domain | Healthcare Analytics |
 | Reporting | Business Intelligence |
-| Visualization | SQL Output Reporting |
+| Analysis Type | Operational Analytics |
 
 ---
 
 # 📂 Dataset Information
 
-The dataset contains simulated hospital operational data including:
+The dataset contains simulated hospital operational records including:
 
 - Patients
 - Doctors
 - Appointments
-- Treatments
-- Billing
 - Departments
-- Hospital visit records
+- Billing
+- Treatments
+- Visit records
 
-The project works on large-scale operational healthcare records to simulate real business analytics scenarios.
+The project uses large-scale healthcare transactional data to simulate real-world analytical reporting scenarios.
 
 ---
 
 # 🧠 Advanced SQL Concepts Used
 
 ## ✅ Common Table Expressions (CTEs)
-Used for modular and layered analytical query design.
+
+Used for modular and layered analytical query building.
+
+---
 
 ## ✅ Window Functions
+
 Implemented:
 - `RANK()`
 - `DENSE_RANK()`
@@ -84,7 +90,10 @@ Implemented:
 - `FIRST_VALUE()`
 - Running Totals
 
+---
+
 ## ✅ Aggregate Functions
+
 Used:
 - `SUM()`
 - `AVG()`
@@ -92,12 +101,15 @@ Used:
 - `MAX()`
 - `MIN()`
 
+---
+
 ## ✅ Business Analytics SQL
+
 - Trend Analysis
+- KPI Reporting
 - Segmentation
-- KPI Analysis
-- Performance Ranking
-- Growth Analysis
+- Ranking Analysis
+- Operational Intelligence
 
 ---
 
@@ -108,10 +120,8 @@ Used:
 # 1️⃣ Doctor Workload Ranking
 
 ## 📌 Business Question
-Which doctors are handling the highest number of patient visits within each department?
 
-## 🎯 Objective
-Identify overloaded doctors and workload imbalance across departments.
+Which doctors are handling the highest number of patient visits within each department?
 
 ---
 
@@ -137,36 +147,31 @@ SELECT
     department,
     doctor_name,
     total_visits,
+    
     DENSE_RANK() OVER (
         PARTITION BY department
         ORDER BY total_visits DESC
     ) AS department_rank
+
 FROM doctor_visits;
 ```
 
 ---
 
-## 📈 Output
-
-![](https://miro.medium.com/v2/resize:fit:1400/1*8q1Q6v2b0i4hK0h0lM0xCg.png)
-
----
-
 ## 💡 Business Insight
-- Identified departments with workload concentration
-- Detected overloaded doctors
-- Highlighted staffing imbalance
-- Helped improve operational planning
+
+- Identified overloaded doctors
+- Detected workload imbalance
+- Improved staffing visibility
+- Supported operational planning
 
 ---
 
 # 2️⃣ Revenue Contribution Analysis
 
 ## 📌 Business Question
-Which doctors contribute the most to hospital revenue?
 
-## 🎯 Objective
-Track financial contribution and identify high-performing doctors.
+Which doctors contribute the most to hospital revenue?
 
 ---
 
@@ -176,36 +181,36 @@ Track financial contribution and identify high-performing doctors.
 SELECT 
     doctor_name,
     department,
+
     SUM(billing_amount) AS total_revenue,
+
     RANK() OVER (
         ORDER BY SUM(billing_amount) DESC
     ) AS revenue_rank
+
 FROM hospital_records
-GROUP BY doctor_name, department;
+
+GROUP BY 
+    doctor_name,
+    department;
 ```
 
 ---
 
-## 📈 Output
-
-![](https://miro.medium.com/v2/resize:fit:1400/1*wK4Wf5tB4Lx4j8sK7n7s5Q.png)
-
----
-
 ## 💡 Business Insight
+
 - Identified top revenue-generating doctors
-- Supported performance-based evaluation
-- Improved financial visibility
+- Improved revenue visibility
+- Supported financial performance tracking
+- Enabled contribution analysis
 
 ---
 
 # 3️⃣ Patient Visit Trend Analysis
 
 ## 📌 Business Question
-How are patient visits changing over time?
 
-## 🎯 Objective
-Monitor operational growth and patient demand trends.
+How are patient visits changing over time?
 
 ---
 
@@ -215,10 +220,11 @@ Monitor operational growth and patient demand trends.
 SELECT 
     visit_month,
     total_visits,
+
     LAG(total_visits) OVER (
         ORDER BY visit_month
     ) AS previous_month_visits,
-    
+
     total_visits -
     LAG(total_visits) OVER (
         ORDER BY visit_month
@@ -229,26 +235,20 @@ FROM monthly_hospital_visits;
 
 ---
 
-## 📈 Output
-
-![](https://miro.medium.com/v2/resize:fit:1400/1*L9VY5f9eU8x5PjN5K8JvLQ.png)
-
----
-
 ## 💡 Business Insight
-- Tracked operational growth
-- Measured patient demand changes
-- Helped forecast future hospital load
+
+- Tracked patient demand growth
+- Measured operational momentum
+- Supported forecasting analysis
+- Improved planning visibility
 
 ---
 
 # 4️⃣ Department Performance Comparison
 
 ## 📌 Business Question
-Which departments perform above or below hospital averages?
 
-## 🎯 Objective
-Benchmark departmental performance against hospital-wide metrics.
+Which departments perform above hospital averages?
 
 ---
 
@@ -257,43 +257,41 @@ Benchmark departmental performance against hospital-wide metrics.
 ```sql
 SELECT 
     department,
+
     AVG(patient_count) AS avg_patients,
-    
+
     CASE
         WHEN AVG(patient_count) >
-            (SELECT AVG(patient_count)
-             FROM department_summary)
+            (
+                SELECT AVG(patient_count)
+                FROM department_summary
+            )
         THEN 'Above Average'
-        
+
         ELSE 'Below Average'
     END AS performance_status
 
 FROM department_summary
+
 GROUP BY department;
 ```
 
 ---
 
-## 📈 Output
-
-![](https://miro.medium.com/v2/resize:fit:1400/1*3K7h9uA4vB7mM8kP1sW7NQ.png)
-
----
-
 ## 💡 Business Insight
+
 - Identified high-performing departments
-- Detected underperforming operational units
-- Supported strategic improvement initiatives
+- Detected underperforming units
+- Improved strategic planning
+- Enhanced operational benchmarking
 
 ---
 
 # 5️⃣ Operational Growth Momentum
 
 ## 📌 Business Question
-Is hospital operational activity accelerating over time?
 
-## 🎯 Objective
-Measure operational momentum and growth consistency.
+Is hospital operational activity increasing consistently?
 
 ---
 
@@ -313,16 +311,12 @@ FROM hospital_operations;
 
 ---
 
-## 📈 Output
-
-![](https://miro.medium.com/v2/resize:fit:1400/1*4V7f9mN0kP8xQ2zL1sT5Rg.png)
-
----
-
 ## 💡 Business Insight
+
 - Monitored long-term operational growth
-- Supported expansion planning
-- Improved capacity forecasting
+- Supported infrastructure planning
+- Improved resource forecasting
+- Enabled capacity analysis
 
 ---
 
@@ -335,8 +329,8 @@ This project demonstrates how SQL analytics can help hospitals:
 ✅ Monitor department performance  
 ✅ Support executive decision-making  
 ✅ Improve resource allocation  
-✅ Forecast hospital operational demand  
-✅ Track business growth trends  
+✅ Forecast operational demand  
+✅ Track long-term growth trends  
 
 ---
 
@@ -352,14 +346,13 @@ This project demonstrates how SQL analytics can help hospitals:
 
 ---
 
-# 📁 Recommended Project Structure
+# 📁 Project Structure
 
 ```bash
 Hospital-Operations-Analytics/
 │
 ├── datasets/
 ├── sql_queries/
-├── screenshots/
 ├── README.md
 └── project_summary.pdf
 ```
@@ -368,7 +361,7 @@ Hospital-Operations-Analytics/
 
 # 🔗 Medium Blog
 
-Read the complete detailed explanation here:
+Detailed project explanation:
 
 👉 https://medium.com/@patelkp021/hospital-operations-performance-analytics-using-advanced-sql-a9474f55a438
 
